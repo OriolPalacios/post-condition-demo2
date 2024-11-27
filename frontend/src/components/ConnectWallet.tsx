@@ -12,6 +12,7 @@ function authenticate() {
     appDetails: {
       name: "Stacks Next.js Starter",
       icon: window.location.origin + "/logo512.png",
+      
     },
     redirectTo: "/",
     onFinish: () => {
@@ -49,3 +50,4 @@ const ConnectWallet = () => {
 };
 
 export default ConnectWallet;
+

@@ -20,10 +20,11 @@
 
 ;; public functions
 ;;
-(define-public (purcharse-token) 
+(define-public (purcharse) 
     (begin 
         ;; debiting to the contract
-        (try! (stx-transfer? u100000 tx-sender (as-contract tx-sender))) 
+        (try! (stx-transfer? u1000000 tx-sender (as-contract tx-sender))) 
+        
         (contract-call? .safe-token mint-safe-token)
     )
 )

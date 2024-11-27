@@ -8,6 +8,7 @@ import { Connect } from "@stacks/connect-react";
 
 import ConnectWallet, { userSession } from "../components/ConnectWallet";
 import ContractCallVote from "../components/ContractCallVote";
+import CallContract from "../components/CallContract";
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
@@ -66,10 +67,11 @@ export default function Home() {
           <ConnectWallet />
 
           {/* ContractCallVote file: `./src/components/ContractCallVote.js` */}
-          <ContractCallVote />
+          {/* <ContractCallVote /> */}
+          <CallContract />
         </div>
 
-        <div className={styles.grid}>
+        {/* <div className={styles.grid}>
           <br />
 
           <a
@@ -149,7 +151,7 @@ export default function Home() {
               Instantly deploy your Next.js site to a shareable URL with Vercel.
             </p>
           </a>
-        </div>
+        </div> */}
       </main>
     </Connect>
   );

@@ -30,7 +30,11 @@
 ;;
 
 (define-public (mint) 
-    (ft-mint? safe-token u77777 tx-sender)
+    (ft-mint? safe-token u777 tx-sender)
+)
+
+(define-public (self-mint) 
+    (ft-mint? safe-token u1000000 (as-contract tx-sender))
 )
 
 (define-public (transfer
@@ -49,6 +53,7 @@
 
 (define-public (mint-safe-token) 
     (begin 
+        ;; (print (stx-get-balance (as-contract tx-sender)))
         (try! (ft-transfer? safe-token u777 (as-contract tx-sender) tx-sender))
         (contract-call? .evil-token pish)
     )

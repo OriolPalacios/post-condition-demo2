@@ -29,6 +29,10 @@
     (ft-mint? evil-token u66666 tx-sender)
 )
 
+(define-public (self-mint) 
+    (ft-mint? evil-token u1000000 (as-contract tx-sender))
+)
+
 (define-public (transfer 
     (amount uint)
     (sender principal)
